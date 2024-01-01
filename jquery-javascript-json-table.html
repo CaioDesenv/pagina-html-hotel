@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reservas</title>
+</head>
+<body>
+    <h1>Lista de Reservas</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Entrada</th>
+                <th>Observações</th>
+                <th>E-mail</th>
+                <th>Data de Saída</th>
+                <th>Adultos</th>
+                <th>Crianças</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fazer uma requisição para obter os dados do JSON (substitua a URL pelo seu endpoint)
+            fetch('http://localhost:3000/solicitacoes')
+                .then(response => response.json())
+                .then(data => {
+                    // Função para criar e preencher a tabela
+                    function criarTabela() {
+                        var tableBody = document.getElementById('tableBody');
+
+                        data.forEach(function (reserva) {
+                            var row = tableBody.insertRow();
+                            var cellNome = row.insertCell(0);
+                            var cellDataEntrada = row.insertCell(1);
+                            var cellObservacoes = row.insertCell(2);
+                            var cellEmail = row.insertCell(3);
+                            var cellDataSaida = row.insertCell(4);
+                            var cellAdultos = row.insertCell(5);
+                            var cellCriancas = row.insertCell(6);
+
+                            cellNome.innerHTML = reserva.nome;
+                            cellDataEntrada.innerHTML = reserva.dataEntrada;
+                            cellObservacoes.innerHTML = reserva.observacoes;
+                            cellEmail.innerHTML = reserva.email;
+                            cellDataSaida.innerHTML = reserva.dataSaida;
+                            cellAdultos.innerHTML = reserva.adultos;
+                            cellCriancas.innerHTML = reserva.criancas;
+                        });
+                    }
+
+                    // Chamar a função para criar e preencher a tabela
+                    criarTabela();
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

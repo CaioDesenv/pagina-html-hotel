@@ -1,0 +1,34 @@
+{
+  "solicitacoes": [
+    {
+      "nome": "Caio Teste",
+      "dataEntrada": "2023-12-31",
+      "observacoes": "Gostaria de um orçamento",
+      "email": "caio@gmail.com",
+      "dataSaida": "2023-12-31",
+      "adultos": "2",
+      "criancas": "2",
+      "id": 1
+    },
+    {
+      "nome": "Alini Oliveira",
+      "dataEntrada": "2023-12-31",
+      "observacoes": "Gostaria de um Orçamento",
+      "email": "caio@gmail.com",
+      "dataSaida": "2023-12-31",
+      "adultos": "2",
+      "criancas": "2",
+      "id": 2
+    },
+    {
+      "nome": "Caio Vinicius Lopes Limas",
+      "dataEntrada": "2024-01-01",
+      "observacoes": "Preciso de um Orçamento",
+      "email": "caio@gmail.com",
+      "dataSaida": "2024-01-03",
+      "adultos": "2",
+      "criancas": "2",
+      "id": 3
+    }
+  ]
+}
